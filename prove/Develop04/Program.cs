@@ -34,7 +34,8 @@ class Program
                     running = false;
                     // Above and beyond. Positive  affirmation to spike dopamine, thereby reinforcing behavior and encouraging continued use.
                     Console.WriteLine("\n===== JOURNAL SAVED =====\n");
-                    Console.WriteLine("You are a beutiful human being. Your thoughts and feelings are valid and worthy of expression. \nKeep writing, you bomm-digity magestic beast. \nBy the way, your hair is exquisite. New shoes?");
+                    Console.WriteLine("\n===== PS: =====\n");
+                    Console.WriteLine("\nYou are a beutiful human being. Your thoughts and feelings are valid and worthy of expression. \nKeep writing, you bomb-digity magestic beast. \n\nBy the way, your hair is exquisite. New shoes?\n\n");
                     break;
                 default:
                     Console.WriteLine("Invalid option");
