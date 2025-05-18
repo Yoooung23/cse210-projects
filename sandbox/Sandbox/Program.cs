@@ -1,27 +1,43 @@
 using System;
+using System.Collections.Generic;
 
-class Program
+namespace Sandbox
 {
-    static void Main(string[] args)
+    class JournalEntry
     {
-        List<string> animals = new List<string>();
-        List<int> debits = new List<int>();
+        public DateTime Date { get; set; }
+        public string Prompt { get; set; }
+        public string Response { get; set; }
 
-        animals.Add("Cow");
-        animals.Add("Horse");
-        animals.Add("Chicken");
-        animals.Add("Monkey");
-       
-       foreach (string animal in animals)
-       {
-        Console.WriteLine(animal);
-       }
+        public JournalEntry(string prompt, string response)
+        {
+            Date = DateTime.Now;
+            Prompt = prompt;
+            Response = response;
+        }
 
-       int AddNumbers(int a, int b)
-       {
-        int sum = a + b;
-        return sum;
-       }
-       Console.WriteLine(AddNumbers(1, 2));
+        public override string ToString()
+        {
+            return $"Date: {Date.ToShortDateString()}, Prompt: {Prompt}, Response: {Response}";
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<JournalEntry> journalEntries = new List<JournalEntry>();
+
+            // Adding sample entries
+            journalEntries.Add(new JournalEntry("What made you happy today?", "I enjoyed a walk in the park."));
+            journalEntries.Add(new JournalEntry("What did you learn today?", "I learned how to use classes in C#."));
+
+            // Display all entries
+            Console.WriteLine("Journal Entries:");
+            foreach (var entry in journalEntries)
+            {
+                Console.WriteLine(entry);
+            }
+        }
     }
 }
